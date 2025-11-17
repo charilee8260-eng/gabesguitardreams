@@ -21,7 +21,57 @@
       --text-soft: #6b7280;
       --border-soft: #e5e7eb;
     }
+    
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
 
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.fade {
+  animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  padding: 8px;
+  margin-top: -22px;
+  color: #ffffff;
+  background: rgba(0,0,0,0.4);
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev {
+  left: 10px;
+}
     * { box-sizing: border-box; }
 
     body {
@@ -438,6 +488,32 @@
         <div class="stack">
           <div>
             <h3 style="font-size:0.95rem; margin-bottom:6px;">Photos</h3>
+            <div class="slideshow-container">
+
+  <div class="slide fade">
+    <img src="Gabriel-1.jpg" alt="Gabriel playing guitar">
+  </div>
+
+  <div class="slide fade">
+    <img src="Gabriel-2.jpg" alt="Gabriel performing">
+  </div>
+
+  <div class="slide fade">
+    <img src="Gabriel-3.jpg" alt="Gabriel white guitar">
+  </div>
+
+  <div class="slide fade">
+    <img src="Gabriel-4.jpg" alt="Gabriel on stage">
+  </div>
+
+  <div class="slide fade">
+    <img src="Gabriel-6.jpg" alt="Gabriel practicing indoors">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
             <div class="media-grid">
               <img src="Gabriel-1.jpg" alt="Gabriel playing guitar outdoors">
               <img src="Gabriel-2.jpg" alt="Gabriel performing with guitar">
