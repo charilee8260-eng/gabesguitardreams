@@ -3,142 +3,497 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support My Son's Guitar Lessons</title>
+  <title>Support Gabriel's Guitar Dreams</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #0f172a;
+      --card: #ffffff;
+      --accent: #6366f1;
+      --accent-soft: #e0e7ff;
+      --accent-dark: #4f46e5;
+      --text-main: #0f172a;
+      --text-soft: #6b7280;
+      --border-soft: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: #f9fafb;
     }
+
     header {
-      background: #333;
-      color: #fff;
-      padding: 20px;
+      padding: 24px 16px 32px;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    header p {
+      margin-top: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #e5e7eb;
+      font-weight: 300;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+      margin-bottom: 10px;
+    }
+
     .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 960px;
+      margin: 0 auto 32px;
+      padding: 0 16px 16px;
     }
-    h1 {
-      text-align: center;
+
+    .hero-card {
+      background: linear-gradient(135deg, rgba(15,23,42,0.98), rgba(30,64,175,0.96));
+      border-radius: 20px;
+      padding: 24px 20px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 16px;
+      align-items: center;
     }
-    p {
+
+    @media (max-width: 768px) {
+      .hero-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-text h2 {
+      font-size: 1.6rem;
+      margin: 0 0 10px;
+    }
+
+    .hero-text p {
+      margin: 0 0 12px;
+      color: #e5e7eb;
+      font-weight: 300;
       line-height: 1.6;
     }
-    .donate-box {
-      margin-top: 30px;
-      text-align: center;
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #cbd5f5;
     }
+
+    .hero-meta span {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(191, 219, 254, 0.5);
+      background: rgba(15, 23, 42, 0.3);
+    }
+
+    .hero-photo {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(191, 219, 254, 0.7);
+      background: rgba(15, 23, 42, 0.7);
+    }
+
+    .hero-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .hero-photo-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #e5e7eb;
+    }
+
+    .hero-photo-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .section-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: #f9fafb;
+      color: var(--text-main);
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.16);
+      border: 1px solid var(--border-soft);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    .donate-buttons {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .donate-button {
-      background: #28a745;
-      color: #fff;
-      padding: 15px 25px;
-      font-size: 18px;
+      background: var(--accent);
+      color: #ffffff;
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      border-radius: 999px;
       border: none;
-      border-radius: 8px;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 20px rgba(79, 70, 229, 0.45);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
     }
+
     .donate-button:hover {
-      background: #218838;
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 26px rgba(79, 70, 229, 0.6);
+    }
+
+    .donate-button.secondary {
+      background: #ffffff;
+      color: var(--accent-dark);
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.12);
+    }
+
+    .donate-button.secondary:hover {
+      background: var(--accent-soft);
+    }
+
+    .pill-small {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4f46e5;
+    }
+
+    .progress-wrapper {
+      margin-top: 10px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 40%; /* adjust this as donations grow */
+      height: 100%;
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .media-grid img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid #e5e7eb;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      height: 220px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .video-play {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 2px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+    }
+
+    .video-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .quote {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f3f4ff;
+      border: 1px solid #e0e7ff;
+      font-size: 0.85rem;
+      color: #374151;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.78rem;
+      color: #6b7280;
+    }
+
+    .thankyou {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 0 28px;
+      font-size: 0.7rem;
+      color: #9ca3af;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Help Support My Son's Guitar Lessons</h1>
+    <div class="pill">Supporting Gabriel’s Guitar Journey 🎸</div>
+    <h1>Help Gabriel Lee Medina Keep Playing</h1>
+    <p>
+      I’m a single mother doing my best to support Gabriel’s love for guitar. Your support helps
+      cover his lessons, materials, and the opportunities that keep his musical dreams alive.
+    </p>
   </header>
 
   <div class="container">
-    <p>Hello and thank you for visiting! My son has a growing passion for guitar and dreams of becoming a skilled musician. To help him continue his lessons and pursue his musical journey, we're raising funds to cover the monthly lesson costs.</p>
+    <!-- HERO -->
+    <section class="hero-card">
+      <div class="hero-text">
+        <h2>Fuel a Young Musician’s Dream</h2>
+        <p>
+          Gabriel’s guitar lessons have become a powerful source of confidence, joy, and expression.
+          Every donation, no matter the size, goes directly toward his musical education and growth.
+        </p>
 
-    <p>Any amount you contribute will go directly toward his guitar lessons, materials, and learning resources. Your kindness truly means the world to us. Thank you for supporting his love for music! ❤️</p>
+        <div class="hero-meta">
+          <span>Guitar student & performer</span>
+          <span>Donations go 100% to lessons</span>
+          <span>Thank you for cheering him on 💛</span>
+        </div>
 
-    <div class="donate-box">
-      <h2>Donate</h2>
-      <p>You can support his guitar lessons using the options below:</p>
+        <div class="donate-buttons">
+          <a href="https://cash.app/$MedLee82" class="donate-button">
+            💸 Donate via Cash App
+          </a>
 
-      <a href="https://cash.app/$MedLee82" class="donate-button">Donate via Cash App</a>
-      <br/><br/>
+          <button class="donate-button secondary" type="button"
+                  onclick="document.getElementById('zelle-info').style.display='block'">
+            🔐 Donate via Zelle
+          </button>
+        </div>
 
-      <button class="donate-button" onclick="document.getElementById('zelle-info').style.display='block'">Donate via Zelle</button>
-      <div id="zelle-info" style="display:none; margin-top:15px; font-size:16px;">
-        <p><strong>Zelle Name:</strong> Sharon Medina</p>
-        <p><strong>Zelle Phone:</strong> 203-440-5159</p>
-        <p><strong>Zelle Email:</strong> medinasharon95@yahoo.com</p>
+        <div id="zelle-info"
+             style="display:none; margin-top:12px; font-size:0.8rem; color:#e5e7eb; background:rgba(15,23,42,0.7); padding:8px 10px; border-radius:10px; border:1px solid rgba(148,163,184,0.7);">
+          <div class="pill-small">Zelle Details</div>
+          <div><strong>Name:</strong> Sharon Medina</div>
+          <div><strong>Phone:</strong> 203-440-5159</div>
+          <div><strong>Email:</strong> medinasharon95@yahoo.com</div>
+        </div>
+
+        <div class="progress-wrapper">
+          <div class="progress-label">
+            <span>Current support: 40%</span>
+            <span>Goal: Ongoing monthly lessons</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <div class="hero-photo">
+        <img src="Gabriel-1.jpg" alt="Gabriel playing guitar" />
+        <div class="hero-photo-badge">
+          <div class="hero-photo-badge-dot"></div>
+          <span>Gabriel • Guitar Student</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT GRID -->
+    <section class="section-grid">
+      <!-- LEFT: Story + Media -->
+      <div class="card">
+        <h3>His Musical Journey</h3>
+        <p>
+          Gabriel discovered his love for guitar at a young age. Music quickly became his safe place,
+          his outlet, and his dream. With every lesson and every performance, he grows more confident,
+          dedicated, and inspired to keep learning.
+        </p>
+        <p style="margin-top:8px;">
+          As his mom, I’ve watched him light up when he plays. Your support helps make sure he can
+          continue taking lessons and exploring this beautiful gift.
+        </p>
+
+        <div class="stack">
+          <div>
+            <h3 style="font-size:0.95rem; margin-bottom:6px;">Photos</h3>
+            <div class="media-grid">
+              <img src="Gabriel-1.jpg" alt="Gabriel playing guitar outdoors">
+              <img src="Gabriel-2.jpg" alt="Gabriel performing with guitar">
+              <img src="Gabriel-3.jpg" alt="Gabriel playing white guitar">
+              <img src="Gabriel-4.jpg" alt="Gabriel playing under stage lights">
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size:0.95rem; margin-bottom:6px;">Video (Coming Soon)</h3>
+            <div class="video-placeholder">
+              <div class="video-row">
+                <div class="video-play">▶</div>
+                <div>
+                  A video of Gabriel playing guitar will be shared here soon. Thank you for
+                  supporting and following his journey!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Testimonials + Gallery -->
+      <div class="card">
+        <h3>What This Support Means</h3>
+        <p>
+          Your generosity doesn’t just pay for lessons — it tells Gabriel that his dreams matter and
+          that people believe in him.
+        </p>
+
+        <div class="stack">
+          <div>
+            <h3 style="font-size:0.95rem; margin-bottom:6px;">Words of Encouragement</h3>
+            <div class="quote">
+              “He has so much talent — keep going!”
+              <span>— Family Friend</span>
+            </div>
+            <div class="quote">
+              “Proud of you and your dedication to music!”
+              <span>— Supporter</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-size:0.95rem; margin-bottom:6px;">More Moments</h3>
+            <div class="media-grid">
+              <img src="Gabriel-6.jpg" alt="Gabriel practicing guitar inside">
+              <img src="Gabriel-4.jpg" alt="Gabriel on stage with guitar">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THANK YOU -->
+    <section class="thankyou">
+      From the bottom of our hearts, thank you for visiting, sharing, and supporting Gabriel’s
+      guitar dreams. Your kindness truly makes a difference. 💛
+    </section>
   </div>
 
-  <div class="container">
-  <h2>Photo Section</h2>
-  <p>Here are a few moments from Gabriel’s performances and practice.</p>
-<img src="https://via.placeholder.com/300x200"
-     alt="Test image"
-     style="margin:10px; border-radius:8px; max-width:100%; height:auto;" />
-  
-
-  <img src="Gabriel-2.jpg"
-       alt="Gabriel playing guitar on stage"
-       style="margin:10px; border-radius:8px; max-width:100%; height:auto;" />
-</div>
-</div>
-    
-
-  <div class="container">
-    <h2>Video Section</h2>
-    <p>Upload your video later. Placeholder below:</p>
-    <div style="width:100%; height:250px; background:#ccc; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px;">Video Placeholder</div>
-  </div>
-
-  <div class="container">
-    <h2>Donation Goal</h2>
-    <p>Help us reach the goal!</p>
-    <div style="background:#eee; height:30px; border-radius:15px; overflow:hidden;">
-      <div style="width:40%; height:100%; background:#28a745;"></div>
-    </div>
-    <p>40% funded</p>
-  </div>
-
-  <div class="container">
-    <h2>His Musical Journey</h2>
-    <p>Write a short story here about your son's passion for guitar. Placeholder text:</p>
-    <p>"My son discovered his love for guitar at a young age. Ever since then, music has been his escape, his joy, and his dream…"</p>
-  </div>
-
-  <div class="container">
-    <h2>Testimonials</h2>
-    <p>Placeholder messages:</p>
-    <blockquote>"He has so much talent — keep going!"</blockquote>
-    <blockquote>"Proud of you and your dedication to music!"</blockquote>
-  </div>
-
-  <div class="container">
-  <h2>Gallery</h2>
-
-  <img src="Gabriel-1.jpg"
-       alt="Gabriel outdoor performance"
-       style="margin:10px; border-radius:8px; max-width:100%; height:auto;" />
-
-  <img src="Gabriel-3.jpg"
-       alt="Gabriel playing white guitar"
-       style="margin:10px; border-radius:8px; max-width:100%; height:auto;" />
-
-  <img src="Gabriel-4.jpg"
-       alt="Gabriel performing under blue lights"
-       style="margin:10px; border-radius:8px; max-width:100%; height:auto;" />
-
-  <img src="Gabriel-6.jpg"
-       alt="Gabriel practicing in the studio"
-       style="margin:10px; border-radius:8px; max-width:100%; height:auto;" />
-  </div>
-</div>
-  </div>
-
+  <footer>
+    Created with love by Gabriel’s mom • All support goes to his music education
+  </footer>
 </body>
 </html>
