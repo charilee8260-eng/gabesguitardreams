@@ -1,108 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support Gabriel's Guitar Dreams</title>
 
-  <!-- Google Font -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
-    .quote-handwritten {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.2rem;
-  background: #eef2ff;
-  border: 1px solid #dbe4ff;
-  border-radius: 14px;
-  padding: 16px 18px;
-  color: #374151;
-  position: relative;
-  margin-top: 20px;
-  text-align: center;
-  box-shadow: 0 4px 14px rgba(99,102,241,0.15);
-}
-
-.quote-handwritten .from {
-  display: block;
-  margin-top: 8px;
-  font-size: 1rem;
-  color: #6b7280;
-}
-
-.quote-handwritten .heart {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  font-size: 1.4rem;
-  color: #ef4b8b;
-  animation: pulseHeart 2.4s ease-in-out infinite;
-}
-
-@keyframes pulseHeart {
-  0% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.25); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.9; }
-}
-    .section-grid {
-  align-items: stretch; /* Ensures both columns grow evenly */
-}
-
-.card {
-  height: 100%;
-}
-    /* Slow Zoom Animation */
-.hero-photo img {
-  animation: slowZoom 12s ease-in-out infinite;
-  transform-origin: center;
-}
-
-/* Keyframes for slow zoom */
-@keyframes slowZoom {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.07); }
-  100% { transform: scale(1); }
-}
-    /* Neon Pulse Glow Animation */
-.hero-photo {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 2px solid rgba(99, 102, 241, 0.8);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.7);
-  animation: neonPulse 4s ease-in-out infinite;
-}
-
-@keyframes neonPulse {
-  0% {
-    box-shadow: 0 0 12px rgba(99, 102, 241, 0.6),
-                0 0 24px rgba(99, 102, 241, 0.3);
-    border-color: rgba(129, 140, 248, 0.8);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(129, 140, 248, 0.9),
-                0 0 45px rgba(129, 140, 248, 0.6);
-    border-color: rgba(167, 139, 250, 1);
-  }
-  100% {
-    box-shadow: 0 0 12px rgba(99, 102, 241, 0.6),
-                0 0 24px rgba(99, 102, 241, 0.3);
-    border-color: rgba(129, 140, 248, 0.8);
-  }
-}
-
-/* Glowing Edge */
-.hero-photo {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(191, 219, 254, 0.8);
-  box-shadow: 0 0 18px rgba(99, 102, 241, 0.55); /* Blue glow */
-}
     :root {
       --bg: #0f172a;
       --card: #ffffff;
@@ -113,57 +22,7 @@
       --text-soft: #6b7280;
       --border-soft: #e5e7eb;
     }
-    
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #e5e7eb;
-}
 
-.slide {
-  display: none;
-}
-
-.slide img {
-  width: 100%;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-.fade {
-  animation: fadeEffect 1.5s;
-}
-
-@keyframes fadeEffect {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 45%;
-  width: auto;
-  padding: 8px;
-  margin-top: -22px;
-  color: #ffffff;
-  background: rgba(0,0,0,0.4);
-  border-radius: 999px;
-  font-size: 18px;
-  font-weight: bold;
-  user-select: none;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev {
-  left: 10px;
-}
     * { box-sizing: border-box; }
 
     body {
@@ -256,11 +115,14 @@
       background: rgba(15, 23, 42, 0.3);
     }
 
+    /* Neon pulsing hero image + slow zoom */
     .hero-photo {
       position: relative;
       border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(191, 219, 254, 0.7);
+      border: 2px solid rgba(99, 102, 241, 0.8);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.7);
+      animation: neonPulse 4s ease-in-out infinite;
       background: rgba(15, 23, 42, 0.7);
     }
 
@@ -269,6 +131,32 @@
       width: 100%;
       height: auto;
       object-fit: cover;
+      animation: slowZoom 12s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes neonPulse {
+      0% {
+        box-shadow: 0 0 12px rgba(99, 102, 241, 0.6),
+                    0 0 24px rgba(99, 102, 241, 0.3);
+        border-color: rgba(129, 140, 248, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(129, 140, 248, 0.9),
+                    0 0 45px rgba(129, 140, 248, 0.6);
+        border-color: rgba(167, 139, 250, 1);
+      }
+      100% {
+        box-shadow: 0 0 12px rgba(99, 102, 241, 0.6),
+                    0 0 24px rgba(99, 102, 241, 0.3);
+        border-color: rgba(129, 140, 248, 0.8);
+      }
     }
 
     .hero-photo-badge {
@@ -299,6 +187,7 @@
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
       gap: 20px;
       margin-top: 24px;
+      align-items: start;
     }
 
     @media (max-width: 768px) {
@@ -312,6 +201,7 @@
       padding: 18px 18px 20px;
       box-shadow: 0 16px 30px rgba(15, 23, 42, 0.16);
       border: 1px solid var(--border-soft);
+      height: 100%;
     }
 
     .card h3 {
@@ -393,7 +283,7 @@
     }
 
     .progress-fill {
-      width: 0%; /* update to 40%, 60%, etc as donations grow */
+      width: 0%; /* update as donations grow */
       height: 100%;
       background: linear-gradient(90deg, #22c55e, #4ade80);
     }
@@ -481,6 +371,57 @@
       background: #e2e8f0;
       transform: translateY(-2px);
     }
+
+    /* Slideshow styles */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      margin: 10px auto;
+      aspect-ratio: 4 / 3;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .fade {
+      animation: fadeEffect 1.2s;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 45%;
+      width: auto;
+      padding: 8px 10px;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .next { right: 10px; }
+    .prev { left: 10px; }
   </style>
 </head>
 <body>
@@ -561,9 +502,10 @@
         <h3>His Musical Journey</h3>
         <p>
           Gabriel didn’t just pick up a guitar — he connected with it instantly. Even though he has been
-          playing for less than two years, he has learned at an incredible pace because of his dedication,
-          discipline, and genuine love for the instrument. What began as simple curiosity has grown into
-          a passion that gives him confidence, joy, and a creative outlet that truly belongs to him.
+          playing for less than a year, he has learned at an incredible pace because of his dedication,
+          discipline, and genuine love for the instrument. What began as simple curiosity has already
+          grown into a passion that gives him confidence, joy, and a creative outlet that truly belongs
+          to him.
         </p>
         <p style="margin-top:8px;">
           As his mom, I’ve watched him practice for hours, push through challenges, and light up every
@@ -580,48 +522,36 @@
         <div class="stack">
           <div>
             <h3 style="font-size:0.95rem; margin-bottom:6px;">Photos</h3>
+
+            <!-- Slideshow with Gabriel-1,2,3,4,6 -->
             <div class="slideshow-container">
 
-  <div class="slide fade">
-    <img src="Gabriel-1.jpg" alt="Gabriel playing guitar">
-  </div>
+              <div class="slide fade">
+                <img src="Gabriel-1.jpg" alt="Gabriel playing guitar">
+              </div>
 
-  <div class="slide fade">
-    <img src="Gabriel-2.jpg" alt="Gabriel performing">
-  </div>
+              <div class="slide fade">
+                <img src="Gabriel-2.jpg" alt="Gabriel performing">
+              </div>
 
-  <div class="slide fade">
-    <img src="Gabriel-3.jpg" alt="Gabriel white guitar">
-  </div>
+              <div class="slide fade">
+                <img src="Gabriel-3.jpg" alt="Gabriel white guitar">
+              </div>
 
-  <div class="slide fade">
-    <img src="Gabriel-4.jpg" alt="Gabriel on stage">
-  </div>
+              <div class="slide fade">
+                <img src="Gabriel-4.jpg" alt="Gabriel on stage">
+              </div>
 
-  <div class="slide fade">
-    <img src="Gabriel-6.jpg" alt="Gabriel practicing indoors">
-  </div>
+              <div class="slide fade">
+                <img src="Gabriel-6.jpg" alt="Gabriel practicing indoors">
+              </div>
 
-  <!-- Added from More Moments -->
-  <div class="slide fade">
-    <img src="Gabriel-6.jpg" alt="Gabriel practicing guitar inside">
-  </div>
+              <a class="prev" onclick="plusSlides(-1)">❮</a>
+              <a class="next" onclick="plusSlides(1)">❯</a>
 
-  <div class="slide fade">
-    <img src="Gabriel-4.jpg" alt="Gabriel on stage with guitar">
-  </div>
+            </div>
 
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-
-<div class="media-grid">
-  <img src="Gabriel-1.jpg" alt="Gabriel playing guitar outdoors">
-  <img src="Gabriel-2.jpg" alt="Gabriel performing with guitar">
-  <img src="Gabriel-3.jpg" alt="Gabriel playing white guitar">
-  <img src="Gabriel-4.jpg" alt="Gabriel playing under stage lights">
-</div>
+            <!-- Static grid (kept) -->
             <div class="media-grid">
               <img src="Gabriel-1.jpg" alt="Gabriel playing guitar outdoors">
               <img src="Gabriel-2.jpg" alt="Gabriel performing with guitar">
@@ -642,13 +572,13 @@
         </div>
       </div>
 
-      <!-- RIGHT: About + Testimonials -->
+      <!-- RIGHT: About + Testimonials + Mom quote -->
       <div class="card">
         <h3>About Gabriel</h3>
         <p>
           Gabriel is one of those rare children whose heart shines through everything he does. He is gentle,
           kind, thoughtful, and full of a quiet strength that shows even more when he plays the guitar.
-          Music came into his life less than two years ago, but it has already become a part of who he is —
+          Music came into his life less than a year ago, but it has already become a part of who he is —
           a safe place, a source of light, and a way for him to express emotions bigger than words.
         </p>
 
@@ -688,13 +618,6 @@
               <span>— Supporter</span>
             </div>
           </div>
-          <div class="quote" style="margin-top:18px; background:#eef2ff; border-color:#dbe4ff;">
-            “Gabriel, never forget how capable you are. Your talent, hard work, and kindness will take you
-            further than you can imagine. Keep playing, keep dreaming — I’m with you always.”
-            <span>— Mom</span>
-          </div>
-        </div>
-      </div>
 
           <div>
             <h3 style="font-size:0.95rem; margin-bottom:6px;">More Moments</h3>
@@ -704,7 +627,34 @@
             </div>
           </div>
         </div>
-        <div style="height:20px;"></div>
+
+        <!-- Mom handwritten-style quote with heart -->
+        <div class="quote"
+             style="
+               margin-top:18px;
+               background:#eef2ff;
+               border-color:#dbe4ff;
+               font-family:'Dancing Script', cursive;
+               font-size:1.1rem;
+               text-align:center;
+               position:relative;
+               box-shadow:0 4px 14px rgba(99,102,241,0.15);
+             ">
+          <span style="
+            position:absolute;
+            top:-10px;
+            right:-10px;
+            font-size:1.4rem;
+            color:#ef4b8b;
+          ">
+            ♥
+          </span>
+          Gabriel, never forget how capable you are. Your talent, hard work, and kindness will take you
+          further than you can imagine. Keep playing, keep dreaming — I’m with you always.
+          <span style="display:block; margin-top:6px; font-size:0.95rem; color:#6b7280;">
+            — Mom
+          </span>
+        </div>
       </div>
     </section>
 
@@ -750,29 +700,46 @@
   <footer>
     Created with love by Gabriel’s mom • All support goes to his music education
   </footer>
+
+  <!-- Slideshow Script -->
   <script>
-let slideIndex = 0;
-showSlides();
+    let slideIndex = 1;
+    let autoTimer = null;
 
-function plusSlides(n) {
-  slideIndex += n - 1;
-  showSlides();
-}
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slide");
+      if (slides.length === 0) return;
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("slide");
-  if (slideIndex >= slides.length) { slideIndex = 0; }
-  if (slideIndex < 0) { slideIndex = slides.length - 1; }
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
 
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
 
-  slides[slideIndex].style.display = "block";
-  slideIndex++;
-  setTimeout(showSlides, 3500); // Change every 3.5 seconds
-}
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    function plusSlides(n) {
+      slideIndex += n;
+      showSlides(slideIndex);
+      if (autoTimer) {
+        clearTimeout(autoTimer);
+        autoSlides();
+      }
+    }
+
+    function autoSlides() {
+      const slides = document.getElementsByClassName("slide");
+      if (slides.length === 0) return;
+      slideIndex++;
+      showSlides(slideIndex);
+      autoTimer = setTimeout(autoSlides, 3500);
+    }
+
+    // Initialize
+    showSlides(slideIndex);
+    autoSlides();
   </script>
 </body>
 </html>
