@@ -11,6 +11,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Slow Zoom Animation */
+.hero-photo img {
+  animation: slowZoom 12s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Keyframes for slow zoom */
+@keyframes slowZoom {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+/* Glowing Edge */
+.hero-photo {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  box-shadow: 0 0 18px rgba(99, 102, 241, 0.55); /* Blue glow */
+}
     :root {
       --bg: #0f172a;
       --card: #ffffff;
